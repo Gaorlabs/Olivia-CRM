@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg0: #ffffff;
+  --bg1: #f5f6f8;
+  --bg2: #edeef1;
+  --t0: #0f1117;
+  --t1: #4b5263;
+  --t2: #9299a8;
+  --bd: rgba(0,0,0,0.08);
+  --bd2: rgba(0,0,0,0.14);
+  --grn: #1D9E75;
+  --grn-d: #0F6E56;
+  --grn-bg: #E1F5EE;
+  --grn-t: #085041;
+  --amb: #854F0B;
+  --amb-bg: #FAEEDA;
+  --blu: #185FA5;
+  --blu-bg: #E6F1FB;
+  --red: #A32D2D;
+  --red-bg: #FCEBEB;
+  --pur: #534AB7;
+  --pur-bg: #EEEDFE;
+  --pur-t: #3C3489;
+  --gry-bg: #f1efe8;
+  --gry-t: #5f5e5a;
+  --r: 8px;
+  --rl: 11px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom global overrides to align with CRM style guide */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg1);
+  color: var(--t0);
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar styles for modern scroll */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Live pulsate animation for connected bot config and live widgets */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+}
+
+.pulsing-dot {
+  animation: pulseGlow 2s infinite ease-in-out;
+}

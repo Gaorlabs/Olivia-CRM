@@ -1,0 +1,329 @@
+{
+  "negocios": [
+    {
+      "id": "negocio-pe-1234",
+      "nombre": "Pollo Broaster OlivIA",
+      "whatsapp_instancia": "instancia-olivia-wa",
+      "whatsapp_numero": "+51 987 654 321",
+      "zona_reparto": "San Isidro, Miraflores, Surco",
+      "activo": true,
+      "created_at": "2026-05-24T17:40:15.094Z"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "user-1",
+      "username": "admin",
+      "nombre": "Administrador General (Tú)",
+      "password_hash": "oliviaadmin",
+      "rol": "super_admin",
+      "negocio_id": null,
+      "created_at": "2026-05-24T18:28:24.314Z"
+    },
+    {
+      "id": "user-2",
+      "username": "broaster",
+      "nombre": "Gerente Broastería Pollo",
+      "password_hash": "broaster123",
+      "rol": "cliente",
+      "negocio_id": "negocio-pe-1234",
+      "created_at": "2026-05-24T18:28:24.314Z"
+    },
+    {
+      "id": "user-3",
+      "username": "pedrodental",
+      "nombre": "Dra. Katherine Silva (DentalGlow)",
+      "password_hash": "dental123",
+      "rol": "cliente",
+      "negocio_id": "negocio-dent-555",
+      "created_at": "2026-05-24T18:28:24.314Z"
+    },
+    {
+      "id": "user-4",
+      "username": "marcosnatural",
+      "nombre": "Juan Pérez (Biomarket)",
+      "password_hash": "natural123",
+      "rol": "cliente",
+      "negocio_id": "negocio-prod-777",
+      "created_at": "2026-05-24T18:28:24.314Z"
+    }
+  ],
+  "promociones": [
+    {
+      "id": "promo-1",
+      "negocio_id": "negocio-pe-1234",
+      "nombre": "Combo Broaster Familiar 🍗",
+      "descripcion": "1 pollo entero broaster + papas fritas familiares + bebestible 1.5L",
+      "precio": 49.9,
+      "igv_incluido": true,
+      "vigencia_fin": "2026-06-30",
+      "condiciones": "Válido para San Isidro y Miraflores. Costo de envío S/ 5.",
+      "activa": true,
+      "prompt_generado": "## PROMOCIONES ACTIVAS DISPONIBLES EN EL NEGOCIO:\n### OPCIÓN DE PROMOCIÓN 1: Combo Broaster Familiar 🍗\nNombre: Combo Broaster Familiar 🍗\nDescripción: 1 pollo entero broaster + papas fritas familiares + bebestible 1.5L\nPrecio: S/ 49.90 (IGV incluido)\nVigencia: Hasta el 2026-06-30\nCondiciones: Válido para San Isidro y Miraflores. Costo de envío S/ 5.\n\n## INSTRUCCIONES DEL BOT (Vendedor Automatizado)\nEres \"OlivIA\", el asistente inteligente de ventas de Pollo Broaster OlivIA. Tu objetivo primordial es tomar pedidos de forma rápida, eficiente y amable.\n\n### REGLAS DE COMPORTAMIENTO:\n1. Sé cálido, usa emojis como 🍗🍟🥤, sé breve y habla en español peruano natural, pero profesional.\n2. Si el cliente pregunta por alguna de nuestras promociones vigentes, preséntale la información de manera limpia con viñetas.\n3. Ofrece tomar el pedido al final de cada respuesta informativa.\n4. Para realizar una venta y armar un pedido, debes recopilar de manera obligada los siguientes 3 datos:\n   - Nombre completo del cliente.\n   - Tipo de entrega: si desea que se lo enviemos a domicilio (\"delivery\") o prefiere recogerlo (\"recojo\").\n   - Dirección de entrega exacta (si eligió delivery).\n5. No asumas datos; si falta alguno, solicítalo con amabilidad.\n6. **MUY IMPORTANTE**: En el momento en que tengas TODO lo necesario (Nombre del cliente, Tipo de entrega y Dirección de entrega si aplica), debes confirmar el total (sumando la promoción elegida, por ejemplo, S/ 49.90 si es el Combo Familiar) y responder al cliente, e INCLUIR al final de tu mensaje el siguiente identificador con la estructura exacta de cierre:\n   [CONFIRM_ORDER: PromoId: <PromoId_elegida>, Cantidad: 1, Tipo: <delivery_o_recojo>, Direccion: <direccion_especificada>, Nombre: <nombre_cliente>]\n   \n   Ejem de etiqueta de cierre:\n   [CONFIRM_ORDER: PromoId: promo-1, Cantidad: 1, Tipo: delivery, Direccion: Calle Antero Aspillaga 240, Nombre: Maria Diaz]\n  ",
+      "created_at": "2026-05-24T17:40:15.095Z",
+      "updated_at": "2026-05-24T17:40:15.095Z"
+    },
+    {
+      "id": "promo-2",
+      "negocio_id": "negocio-pe-1234",
+      "nombre": "Dúo Broaster Crujiente 🍔",
+      "descripcion": "2 hamburguesas de pollo broaster + papas medianas + gaseosa 500ml",
+      "precio": 24.9,
+      "igv_incluido": true,
+      "vigencia_fin": "2026-06-15",
+      "condiciones": "Disponible en salón o delivery. Recorte de zona aplica.",
+      "activa": true,
+      "prompt_generado": "## PROMOCIONES ACTIVAS DISPONIBLES EN EL NEGOCIO:\n### OPCIÓN DE PROMOCIÓN 1: Dúo Broaster Crujiente 🍔\nNombre: Dúo Broaster Crujiente 🍔\nDescripción: 2 hamburguesas de pollo broaster + papas medianas + gaseosa 500ml\nPrecio: S/ 24.90 (IGV incluido)\nVigencia: Hasta el 2026-06-15\nCondiciones: Disponible en salón o delivery. Recorte de zona aplica.\n\n## INSTRUCCIONES DEL BOT (Vendedor Automatizado)\nEres \"OlivIA\", el asistente inteligente de ventas de Pollo Broaster OlivIA. Tu objetivo primordial es tomar pedidos de forma rápida, eficiente y amable.\n\n### REGLAS DE COMPORTAMIENTO:\n1. Sé cálido, usa emojis como 🍗🍟🥤, sé breve y habla en español peruano natural, pero profesional.\n2. Si el cliente pregunta por alguna de nuestras promociones vigentes, preséntale la información de manera limpia con viñetas.\n3. Ofrece tomar el pedido al final de cada respuesta informativa.\n4. Para realizar una venta y armar un pedido, debes recopilar de manera obligada los siguientes 3 datos:\n   - Nombre completo del cliente.\n   - Tipo de entrega: si desea que se lo enviemos a domicilio (\"delivery\") o prefiere recogerlo (\"recojo\").\n   - Dirección de entrega exacta (si eligió delivery).\n5. No asumas datos; si falta alguno, solicítalo con amabilidad.\n6. **MUY IMPORTANTE**: En el momento en que tengas TODO lo necesario (Nombre del cliente, Tipo de entrega y Dirección de entrega si aplica), debes confirmar el total (sumando la promoción elegida, por ejemplo, S/ 49.90 si es el Combo Familiar) y responder al cliente, e INCLUIR al final de tu mensaje el siguiente identificador con la estructura exacta de cierre:\n   [CONFIRM_ORDER: PromoId: <PromoId_elegida>, Cantidad: 1, Tipo: <delivery_o_recojo>, Direccion: <direccion_especificada>, Nombre: <nombre_cliente>]\n   \n   Ejem de etiqueta de cierre:\n   [CONFIRM_ORDER: PromoId: promo-1, Cantidad: 1, Tipo: delivery, Direccion: Calle Antero Aspillaga 240, Nombre: Maria Diaz]\n  ",
+      "created_at": "2026-05-24T17:40:15.095Z",
+      "updated_at": "2026-05-24T17:57:00.866Z"
+    },
+    {
+      "negocio_id": "negocio-pe-1234",
+      "nombre": "nuevo",
+      "descripcion": "Sabor increíble de pollo broaster crocante",
+      "precio": 39.9,
+      "igv_incluido": true,
+      "vigencia_fin": "30 de junio 2026",
+      "condiciones": "Costo de envío S/ 5.",
+      "activa": false,
+      "id": "promo-1779645434309",
+      "prompt_generado": "## PROMOCIONES ACTIVAS DISPONIBLES EN EL NEGOCIO:\nNo hay promociones activas registradas en este momento. Ofrece la carta general de pollos broaster y papas.\n\n## INSTRUCCIONES DEL BOT (Vendedor Automatizado)\nEres \"OlivIA\", el asistente inteligente de ventas de Pollo Broaster OlivIA. Tu objetivo primordial es tomar pedidos de forma rápida, eficiente y amable.\n\n### REGLAS DE COMPORTAMIENTO:\n1. Sé cálido, usa emojis como 🍗🍟🥤, sé breve y habla en español peruano natural, pero profesional.\n2. Si el cliente pregunta por alguna de nuestras promociones vigentes, preséntale la información de manera limpia con viñetas.\n3. Ofrece tomar el pedido al final de cada respuesta informativa.\n4. Para realizar una venta y armar un pedido, debes recopilar de manera obligada los siguientes 3 datos:\n   - Nombre completo del cliente.\n   - Tipo de entrega: si desea que se lo enviemos a domicilio (\"delivery\") o prefiere recogerlo (\"recojo\").\n   - Dirección de entrega exacta (si eligió delivery).\n5. No asumas datos; si falta alguno, solicítalo con amabilidad.\n6. **MUY IMPORTANTE**: En el momento en que tengas TODO lo necesario (Nombre del cliente, Tipo de entrega y Dirección de entrega si aplica), debes confirmar el total (sumando la promoción elegida, por ejemplo, S/ 49.90 si es el Combo Familiar) y responder al cliente, e INCLUIR al final de tu mensaje el siguiente identificador con la estructura exacta de cierre:\n   [CONFIRM_ORDER: PromoId: <PromoId_elegida>, Cantidad: 1, Tipo: <delivery_o_recojo>, Direccion: <direccion_especificada>, Nombre: <nombre_cliente>]\n   \n   Ejem de etiqueta de cierre:\n   [CONFIRM_ORDER: PromoId: promo-1, Cantidad: 1, Tipo: delivery, Direccion: Calle Antero Aspillaga 240, Nombre: Maria Diaz]\n  ",
+      "created_at": "2026-05-24T17:57:14.309Z",
+      "updated_at": "2026-05-24T17:57:27.523Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead-1",
+      "negocio_id": "negocio-pe-1234",
+      "telefono": "+51987654321",
+      "nombre": "María Ríos",
+      "canal_origen": "whatsapp",
+      "red_social": "facebook",
+      "created_at": "2026-05-24T15:40:15.095Z"
+    },
+    {
+      "id": "lead-2",
+      "negocio_id": "negocio-pe-1234",
+      "telefono": "+51912345678",
+      "nombre": "Juan Carlos P.",
+      "canal_origen": "whatsapp",
+      "red_social": "instagram",
+      "created_at": "2026-05-24T12:40:15.095Z"
+    },
+    {
+      "id": "lead-3",
+      "negocio_id": "negocio-pe-1234",
+      "telefono": "+51945123456",
+      "nombre": "Ana López",
+      "canal_origen": "whatsapp",
+      "red_social": "directo",
+      "created_at": "2026-05-24T09:40:15.095Z"
+    },
+    {
+      "id": "lead-4",
+      "negocio_id": "negocio-pe-1234",
+      "telefono": "+51998765432",
+      "nombre": "Roberto García",
+      "canal_origen": "whatsapp",
+      "red_social": "tiktok",
+      "created_at": "2026-05-24T05:40:15.095Z"
+    }
+  ],
+  "conversaciones": [
+    {
+      "id": "conv-1",
+      "lead_id": "lead-1",
+      "promocion_id": "promo-1",
+      "estado": "consultando",
+      "created_at": "2026-05-24T15:40:15.095Z",
+      "updated_at": "2026-05-24T17:40:15.095Z"
+    },
+    {
+      "id": "conv-2",
+      "lead_id": "lead-2",
+      "promocion_id": "promo-1",
+      "estado": "completada",
+      "created_at": "2026-05-24T12:40:15.095Z",
+      "updated_at": "2026-05-24T13:40:15.095Z"
+    },
+    {
+      "id": "conv-3",
+      "lead_id": "lead-3",
+      "promocion_id": "promo-1",
+      "estado": "iniciada",
+      "created_at": "2026-05-24T09:40:15.095Z",
+      "updated_at": "2026-05-24T17:40:15.095Z"
+    },
+    {
+      "id": "conv-4",
+      "lead_id": "lead-4",
+      "promocion_id": "promo-1",
+      "estado": "tomando_pedido",
+      "created_at": "2026-05-24T05:40:15.095Z",
+      "updated_at": "2026-05-24T17:40:15.095Z"
+    }
+  ],
+  "mensajes": [
+    {
+      "id": "msg-1-1",
+      "conversacion_id": "conv-1",
+      "rol": "cliente",
+      "contenido": "Hola, ¿de qué se trata el Combo Familiar?",
+      "created_at": "2026-05-24T15:46:15.095Z"
+    },
+    {
+      "id": "msg-1-2",
+      "conversacion_id": "conv-1",
+      "rol": "bot",
+      "contenido": "¡Hola María! 😊 El Combo Broaster Familiar 🍗 incluye un riquísimo pollo entero broaster crocante, porción familiar de papas fritas y un bebestible de 1.5L. Todo por S/ 49.90 (IGV incluido). Hacemos Delivery en San Isidro, Miraflores y Surco. ¿Deseas ordenar uno para hoy?",
+      "created_at": "2026-05-24T15:52:15.095Z"
+    },
+    {
+      "id": "msg-1-3",
+      "conversacion_id": "conv-1",
+      "rol": "cliente",
+      "contenido": "Genial, de hecho sí, apúntame uno para San Isidro.",
+      "created_at": "2026-05-24T17:10:15.095Z"
+    },
+    {
+      "id": "msg-2-1",
+      "conversacion_id": "conv-2",
+      "rol": "cliente",
+      "contenido": "Hola, info del combo",
+      "created_at": "2026-05-24T12:46:15.095Z"
+    },
+    {
+      "id": "msg-2-2",
+      "conversacion_id": "conv-2",
+      "rol": "bot",
+      "contenido": "Hola Juan Carlos. Tenemos el Combo Broaster Familiar 🍗 a S/ 49.90. El bot toma tu orden directamente.",
+      "created_at": "2026-05-24T12:52:15.095Z"
+    },
+    {
+      "id": "msg-2-3",
+      "conversacion_id": "conv-2",
+      "rol": "cliente",
+      "contenido": "Sip, envíame a Av Larco 542 Miraflores. Mi nombre es Juan Carlos P. Delivery por favor.",
+      "created_at": "2026-05-24T13:10:15.095Z"
+    },
+    {
+      "id": "msg-2-4",
+      "conversacion_id": "conv-2",
+      "rol": "bot",
+      "contenido": "Perfecto! He generado tu pedido por S/ 49.90. Aquí tienes tu link de pago seguro de Culqi para completar la orden: https://pago.culqi.com/pay/q_olivia_9872. Avísanos al completar el pago.",
+      "created_at": "2026-05-24T13:16:15.095Z"
+    },
+    {
+      "id": "msg-3-1",
+      "conversacion_id": "conv-3",
+      "rol": "cliente",
+      "contenido": "Hola, ¿sigue activa la oferta?",
+      "created_at": "2026-05-24T09:46:15.095Z"
+    },
+    {
+      "id": "msg-4-1",
+      "conversacion_id": "conv-4",
+      "rol": "cliente",
+      "contenido": "Hola, quiero pedir la hamburguesa",
+      "created_at": "2026-05-24T05:46:15.095Z"
+    },
+    {
+      "id": "msg-4-2",
+      "conversacion_id": "conv-4",
+      "rol": "bot",
+      "contenido": "¡Hola Roberto! Gusto saludarte. ¿Te refieres a la hamburguesa del Combo Crujiente (S/ 24.90) o al Combo Broaster Familiar?",
+      "created_at": "2026-05-24T05:52:15.095Z"
+    },
+    {
+      "id": "msg-4-3",
+      "conversacion_id": "conv-4",
+      "rol": "cliente",
+      "contenido": "Quiero 2 Combos Familiares en realidad, lo vi en la tele.",
+      "created_at": "2026-05-24T06:40:15.095Z"
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "ped-1",
+      "lead_id": "lead-1",
+      "conversacion_id": "conv-1",
+      "promocion_id": "promo-1",
+      "direccion_entrega": "Calle Antero Aspillaga 240, Dpto 502, San Isidro",
+      "tipo_entrega": "delivery",
+      "cantidad": 1,
+      "subtotal": 42.29,
+      "igv": 7.61,
+      "total": 49.9,
+      "estado": "pendiente",
+      "notas": "Traer vuelto de S/ 100 si no pagan con link",
+      "created_at": "2026-05-24T17:15:15.095Z",
+      "updated_at": "2026-05-24T17:40:15.095Z"
+    },
+    {
+      "id": "ped-2",
+      "lead_id": "lead-2",
+      "conversacion_id": "conv-2",
+      "promocion_id": "promo-1",
+      "direccion_entrega": "Av Larco 542, Miraflores",
+      "tipo_entrega": "delivery",
+      "cantidad": 1,
+      "subtotal": 42.29,
+      "igv": 7.61,
+      "total": 49.9,
+      "estado": "pagado",
+      "notas": "Pago confirmado mediante webhook Culqi",
+      "created_at": "2026-05-24T13:10:15.095Z",
+      "updated_at": "2026-05-24T13:16:15.095Z"
+    },
+    {
+      "id": "ped-3",
+      "lead_id": "lead-4",
+      "conversacion_id": "conv-4",
+      "promocion_id": "promo-1",
+      "direccion_entrega": "Av Arequipa 3450, dpto 302, San Isidro",
+      "tipo_entrega": "delivery",
+      "cantidad": 2,
+      "subtotal": 84.58,
+      "igv": 15.22,
+      "total": 99.8,
+      "estado": "link_enviado",
+      "notas": "Esperando confirmación del cliente en pasarela",
+      "created_at": "2026-05-24T06:40:15.095Z",
+      "updated_at": "2026-05-24T17:40:15.095Z"
+    }
+  ],
+  "pagos": [
+    {
+      "id": "pago-1",
+      "pedido_id": "ped-2",
+      "monto": 49.9,
+      "pasarela": "culqi",
+      "estado": "pagado",
+      "link_pago": "https://pago.culqi.com/pay/q_olivia_9872",
+      "referencia_externa": "chr_live_9872138",
+      "pagado_at": "2026-05-24T13:16:15.095Z",
+      "created_at": "2026-05-24T13:10:15.095Z"
+    },
+    {
+      "id": "pago-2",
+      "pedido_id": "ped-3",
+      "monto": 99.8,
+      "pasarela": "culqi",
+      "estado": "pendiente",
+      "link_pago": "https://pago.culqi.com/pay/q_olivia_2451",
+      "referencia_externa": "chr_live_109235",
+      "pagado_at": null,
+      "created_at": "2026-05-24T06:40:15.095Z"
+    }
+  ],
+  "botConfig": {
+    "humano_backup": true,
+    "bot_activo": true,
+    "whatsapp_conectado": true,
+    "webhook": {
+      "n8n_webhook_url": "https://n8n.tuservidor.com/webhook/olivia-wa",
+      "n8n_secret": "secreto-compartido-12345"
+    }
+  }
+}
