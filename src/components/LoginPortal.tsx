@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Smartphone, Lock, User, ShieldAlert, ArrowRight, Eye, EyeOff, Sun, Moon } from "lucide-react";
+import { Lock, User, ShieldAlert, ArrowRight, Eye, EyeOff, Sun, Moon, Rocket } from "lucide-react";
 import { motion } from "motion/react";
 
 interface LoginPortalProps {
@@ -12,7 +12,11 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLoginSuccess }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showPass, setShowPass] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => (localStorage.getItem('theme') as 'light' | 'dark') || 'light');
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) return savedTheme as 'light' | 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
@@ -57,8 +61,8 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLoginSuccess }) => {
         className={`flex flex-col justify-center p-8 md:p-16 ${isDark ? "bg-slate-950/20" : "bg-emerald-50/30"}`}
       >
         <div className="flex items-center gap-3 mb-8 md:mb-0">
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/20">
-              <Smartphone className="text-white" size={20} fontWeight={900} />
+            <div className="w-10 h-10 bg-emerald-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <Rocket className="text-white" size={20} />
             </div>
             <span className={`text-2xl font-bold ${isDark ? "text-white" : "text-slate-900"} tracking-tighter`}>OlivIA</span>
         </div>
