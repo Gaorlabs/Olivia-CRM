@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Smartphone, Lock, User, ShieldAlert, ArrowRight, Eye, EyeOff, Sun, Moon } from "lucide-react";
 import { motion } from "motion/react";
-import crmIllustration from '../assets/images/crm_illustration_1779724480916.png';
 
 interface LoginPortalProps {
   onLoginSuccess: (user: any, negocio: any) => void;
@@ -13,7 +12,7 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLoginSuccess }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showPass, setShowPass] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => (localStorage.getItem('theme') as 'light' | 'dark') || 'dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => (localStorage.getItem('theme') as 'light' | 'dark') || 'light');
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
@@ -59,7 +58,7 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLoginSuccess }) => {
       >
         <div className="flex items-center gap-3 mb-8 md:mb-0">
             <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/20">
-              <Smartphone className={`${isDark ? "text-slate-950" : "text-white"}`} size={20} fontWeight={900} />
+              <Smartphone className="text-white" size={20} fontWeight={900} />
             </div>
             <span className={`text-2xl font-bold ${isDark ? "text-white" : "text-slate-900"} tracking-tighter`}>OlivIA</span>
         </div>
@@ -110,7 +109,7 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLoginSuccess }) => {
         
         <button 
             onClick={() => setTheme(prev => prev === 'dark' ? 'light' : 'dark')}
-            className={`absolute top-6 right-6 p-2 rounded-full ${isDark ? "bg-slate-900 text-slate-400 hover:text-white" : "bg-white text-slate-600 hover:text-slate-900"} border ${isDark ? "border-slate-800" : "border-slate-200"} transition-all`}
+            className={`absolute top-6 right-6 p-3 rounded-full ${isDark ? "bg-slate-900 text-slate-400 hover:text-white" : "bg-white text-slate-600 hover:text-slate-900"} border ${isDark ? "border-slate-800" : "border-slate-200"} transition-all z-50 cursor-pointer`}
         >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
         </button>
@@ -123,9 +122,6 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLoginSuccess }) => {
             className={`${isDark ? "bg-slate-900/40 border-slate-800/60 shadow-emerald-950/20" : "bg-white/80 border-slate-200 shadow-emerald-200/30"} backdrop-blur-3xl border rounded-3xl shadow-2xl p-8 transition-colors duration-300`}
           >
             <h2 className={`text-2xl font-bold ${isDark ? "text-white" : "text-slate-900"} mb-1.5 tracking-tight`}>Iniciar sesión</h2>
-            <div className="flex justify-center my-4">
-              <img src={crmIllustration} alt="Automatización de Ventas" className="w-full h-auto max-w-[160px] opacity-90 object-contain" />
-            </div>
             <p className={`text-sm ${isDark ? "text-slate-400" : "text-slate-500"} mb-8`}>
               Bienvenido de vuelta, accede al panel.
             </p>
