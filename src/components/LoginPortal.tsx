@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Smartphone, Lock, User, ShieldAlert, ArrowRight, Eye, EyeOff, Sun, Moon } from "lucide-react";
 import { motion } from "motion/react";
+import crmIllustration from '../assets/images/crm_illustration_1779724480916.png';
 
 interface LoginPortalProps {
   onLoginSuccess: (user: any, negocio: any) => void;
@@ -27,30 +28,16 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLoginSuccess }) => {
     setLoading(true);
     setError(null);
 
-    try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-      });
-
-      const data = await res.json();
-      if (!res.ok) {
-        setError(data.message || "Credenciales incorrectas.");
-      } else {
-        localStorage.setItem("olivia_user", JSON.stringify(data.user));
-        if (data.negocio) {
-          localStorage.setItem("olivia_tenant_id", data.negocio.id);
-        } else {
-          localStorage.removeItem("olivia_tenant_id");
-        }
-        onLoginSuccess(data.user, data.negocio);
-      }
-    } catch (err: any) {
-      setError("No se pudo conectar con el servidor.");
-    } finally {
-      setLoading(false);
-    }
+    // Mock login for demo purposes
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    const mockUser = { id: "u1", nombre: "Admin Demo", rol: username === "admin" ? "super_admin" : "usuario", negocio_id: "demo-negocio" };
+    const mockNegocio = { id: "demo-negocio", name: "Demo Farmacia" };
+    
+    localStorage.setItem("olivia_user", JSON.stringify(mockUser));
+    localStorage.setItem("olivia_tenant_id", mockNegocio.id);
+    onLoginSuccess(mockUser, mockNegocio);
+    setLoading(false);
   };
 
   const handleQuickSelect = (u: string, p: string) => {
@@ -136,6 +123,9 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLoginSuccess }) => {
             className={`${isDark ? "bg-slate-900/40 border-slate-800/60 shadow-emerald-950/20" : "bg-white/80 border-slate-200 shadow-emerald-200/30"} backdrop-blur-3xl border rounded-3xl shadow-2xl p-8 transition-colors duration-300`}
           >
             <h2 className={`text-2xl font-bold ${isDark ? "text-white" : "text-slate-900"} mb-1.5 tracking-tight`}>Iniciar sesión</h2>
+            <div className="flex justify-center my-4">
+              <img src={crmIllustration} alt="Automatización de Ventas" className="w-full h-auto max-w-[160px] opacity-90 object-contain" />
+            </div>
             <p className={`text-sm ${isDark ? "text-slate-400" : "text-slate-500"} mb-8`}>
               Bienvenido de vuelta, accede al panel.
             </p>
